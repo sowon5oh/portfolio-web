@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --accent-color: #00e3b2;
+  --custom-blue: #037ffc;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Azeret Mono', monospace;
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0 4px,
+    4px 4px,
+    4px 0,
+    calc(100% - 4px) 0,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0 calc(100% - 4px)
+  );
+}
+
+@layer components {
+  .pixel-border {
+    @apply border-2 border-white relative;
+    image-rendering: pixelated;
+  }
+  
+  .pixel-text {
+    @apply tracking-tight leading-relaxed;
+  }
+
+  .pixel-card {
+    @apply bg-black border-2 border-white pixel-corners transition-all duration-200;
+  }
+
+  .pixel-button {
+    @apply px-3 py-1.5 bg-black border-2 border-white hover:bg-emerald-500 hover:border-emerald-500 transition-colors duration-200 pixel-corners;
+  }
+}
+
+.pixel-dots {
+  @apply overflow-hidden;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
