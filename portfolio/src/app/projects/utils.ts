@@ -1,8 +1,9 @@
-import { Cpu, Bluetooth, Wifi, Radio, Users, Usb, Code, Layers, Activity, Icon as LucideIcon } from 'lucide-react';
+import { Cpu, Bluetooth, Wifi, Radio, Users, Usb, Code, Layers, Activity } from 'lucide-react';
+import { LucideProps } from 'lucide-react';
 
 type TagCategory = 'mcu' | 'os' | 'wan' | 'other';
 
-export const getTagInfo = (tag: string): { icon: typeof LucideIcon; category: TagCategory } => {
+export const getTagInfo = (tag: string): { icon: React.ComponentType<LucideProps>; category: TagCategory } => {
   const lowercaseTag = tag.toLowerCase();
   switch (lowercaseTag) {
     case 'nrf52':
