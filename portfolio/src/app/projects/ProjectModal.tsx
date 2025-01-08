@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Project, ProjectCategory } from './types'
 import { ChevronLeft, ChevronRight, Package, Wifi, BotIcon as Robot } from 'lucide-react'
-import { getTagInfo, getCategoryColor } from './utils'
 import Tag from './Tag'
 
 interface ProjectModalProps {

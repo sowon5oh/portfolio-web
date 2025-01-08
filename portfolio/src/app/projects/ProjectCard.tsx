@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { Package, Wifi, BotIcon as Robot } from 'lucide-react'
 import { Project, ProjectCategory } from './types'
-import { getTagInfo, getCategoryColor } from './utils'
 import Tag from './Tag'
 
 const getCategoryIcon = (category: ProjectCategory) => {

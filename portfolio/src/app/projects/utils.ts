@@ -26,7 +26,7 @@ export const getTagInfo = (tag: string): { icon: typeof LucideIcon; category: Ta
     case 'sensors':
       return { icon: Activity, category: 'other' };
     case 'serial':
-      return { icon: Usb };
+      return { icon: Usb, category: 'other' };
     default:
       return { icon: Code, category: 'other' };
   }
